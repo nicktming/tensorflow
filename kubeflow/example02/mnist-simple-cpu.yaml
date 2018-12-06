@@ -1,0 +1,13 @@
+apiVersion: kubeflow.org/v1alpha1
+kind: TFJob
+metadata:
+  name: mnist-simple-cpu
+spec:
+  replicaSpecs:
+    - template:
+        spec:
+          containers:
+            - image: nicktming/mnist-cpu:v0.1 
+              name: tensorflow
+              command: ["python", "/app/main.py"]
+          restartPolicy: OnFailure

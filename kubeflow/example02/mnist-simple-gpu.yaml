@@ -1,0 +1,16 @@
+apiVersion: kubeflow.org/v1alpha1
+kind: TFJob
+metadata:
+  name: mnist-simple-gpu
+spec:
+  replicaSpecs:
+    - template:
+        spec:
+          containers:
+            - image: registry.aliyuncs.com/kubeflow-images-public/tf-mnist:gpu
+              name: tensorflow
+              command: ["python", "/app/main.py"]
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+          restartPolicy: OnFailure
