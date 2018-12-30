@@ -16,6 +16,7 @@ with tf.Session(graph=g1) as sess:
 	with tf.variable_scope("", reuse=True):
 		print(sess.run(tf.get_variable("v")))
 	print("default:", tf.get_default_graph())
+	# print("variables:", tf.GraphKeys.GLOBAL_VARIABLES)
 
 
 with tf.Session(graph=g2) as sess:
