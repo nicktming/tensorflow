@@ -10,10 +10,10 @@ print "Validating data size:", mnist.validation.num_examples
 
 print "Testing data size:", mnist.test.num_examples
 
-print "Example training data:", mnist.train.images[0]
+# print "Example training data:", mnist.train.images[0]
 
-print "Example traing data label:", mnist.train.labels[0]
-
+for i in range(10):
+	print "Example traing data label:", mnist.train.labels[i]
 
 
 
